@@ -6,78 +6,124 @@
     box-sizing: inherit;
 }
 
-#container {
-    margin-left: 4em;
-    margin-right: 4em;
-}
-header {
-    .container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-top: 2em;
-        margin-bottom: 2rem;
-        .brand {
-            width: 387px;
-            height: 77px;
-        }
-        .menubar {
-            .links {
-                display: flex;
-                font-family: Changa;
-                font-size: 25px;
-                text-decoration: none;
-                list-style: none;
-
-                .items {
-                    margin-left: 1em;
-
-                    .items-link {
-                        text-decoration: none;
-                        color: #575751;
-                        border-bottom: 2px solid #1ebff0;
-                        box-shadow: inset 0 -12px 0 #1ebff0; 
-                        // box shadow adds additional thickness
-                        transition: background .15s cubic-bezier(.33,.66,.66,1);
-                        text-decoration: none;
-                        &:hover {
-                            transition: ease-in .5s;
-                            background: #1ebff0;
-                          }
-                    }
-                }
-            }
-        }
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em) { @content};  //600px
+    }
+    @if $breakpoint == tab-port {
+        @media (max-width: 56.25em) { @content};  //900px
+    }
+    @if $breakpoint == tab-land {
+        @media (max-width: 75em) { @content};     //1200px
+    }
+    @if $breakpoint == big-desktop {
+        @media (min-width: 112.5em) { @content};     //1800px
     }
 }
 
+#container {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    @include respond(tab-port) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    @include respond(phone) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
 #container {
     font-family: Changa;
     
     .text-side {
         width: 700px;
         margin-top: 8em;
+        @include respond(tab-port) {
+            width: auto;
+        }
+        @include respond(phone) {
+            width: auto;
+        }
         h1.text-title {
             font-size: 50px;
             font-weight: 600;
+            @include respond(tab-port) {
+                font-size: 25px;
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+            @include respond(phone) {
+                font-size: 25px;
+                text-align: center;
+                margin-bottom: 1rem;
+            }
         }
         p.text-desc {
             font-size: 25px;
             font-weight: 300;
             line-height: 1.84;
             color: #575751;
+            @include respond(tab-port) {
+                font-size: 20px;
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+            @include respond(phone) {
+                font-size: 20px;
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    .col-img {
+        @include respond(tab-port) {
+            display: none;
+        }
+        @include respond(phone) {
+            display: none;
         }
     }
 
     .illustration {
         margin-left: 10em;
+        @include respond(tab-port) {
+            display: none;
+        }
+        @include respond(phone) {
+            display: none;
+        }
+        img {
+            width: 677px;
+            height: 525px;
+            @include respond(tab-port) {
+                display: none;
+            }
+            @include respond(phone) {
+                display: none;
+            }
+        }
     }
 
     .newsletter {
         margin-bottom: 4em;
+        @include respond(tab-port) {
+            margin: 0 auto;
+        }
+        @include respond(phone) {
+            margin-bottom: 1em;
+        }
         ion-label {
             font-size: 25px;
             color: #575751;
+            @include respond(tab-port) {
+               font-size: 18px;
+               text-align: center;
+            }
+            @include respond(phone) {
+                font-size: 18px;
+            }
         }
 
         input {
@@ -89,15 +135,41 @@ header {
             font-size: 25px;
             padding-left: 10px;
             margin-right: 10px;
+            @include respond(tab-port) {
+                font-size: 18px;
+                height: 50px;
+                width: 350px;
+                padding-left: 5px;
+                margin-right: 5px;
+             }
+             @include respond(phone) {
+                 font-size: 16px;
+                 height: 40px;
+                 width: 250px;
+                 padding-left: 5px;
+                 margin-right: 5px;
+             }
         }
 
         ion-button {
             width: 130px;
             height: 58px;
-            margin-top: -16px;
+            // margin-top: -16px;
             font-size: 22px;
             font-weight: 500;
             text-transform: initial;
+            @include respond(tab-port) {
+                font-size: 16px;
+                height: 50px;
+                width: 90px;
+                font-family: Changa;
+            }
+            @include respond(phone) {
+                font-size: 16px;
+                height: 40px;
+                width: 79px;
+                font-family: Changa;
+            }
         }
     }
 
@@ -113,6 +185,14 @@ header {
             letter-spacing: normal;
             text-align: left;
             color: #575751;
+            @include respond(tab-port) {
+                margin-top: 2rem;
+                font-size: 18px;
+            }
+
+            @include respond(phone) {
+                font-size: 16px;
+            }
         }
     }
     
@@ -139,12 +219,18 @@ header {
                     font-size: 20px;
                     color: #1e2023;
                     font-weight: 200;
+                    @include respond (phone) {
+                        font-size: 16px;
+                    }
                 }
 
                 p.title {
                     font-size: 25px;
                     color: #1ebff0;
                     font-weight: 500;
+                    @include respond (phone) {
+                        font-size: 18px;
+                    }
                 }
             }
         }
@@ -154,8 +240,18 @@ header {
             padding-bottom: 1em;
             font-size: 18px;
             color: #575751;
+            @include respond (phone) {
+                font-size: 16px;
+            }
         }
 
+        ion-button {
+            @include respond (phone) {
+               font-family: Changa;
+               border-radius: 3px;
+            }
+        }
     }
 
 }
+

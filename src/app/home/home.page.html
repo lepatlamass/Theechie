@@ -1,71 +1,78 @@
 <ion-content>
-    <header id="container">
-        <div class="container">
-            <img  src="../../assets/logo/Brand.png"  srcset="../../assets/logo/Brand@2x.png 2x, ../../assets/logo/Brand@3x.png 3x" alt="logo de thetechie" class="brand">
-            <div class="menubar">
-                <ul class="links">
-                    <li class="items"><a class="items-link" href="#">Home</a></li>
-                    <li class="items"><a class="items-link" href="#">About</a></li>
-                    <li class="items"><a class="items-link" href="#">Contact</a></li>
-                </ul>
-            </div>
+ <nav></nav>
+  <main id="container">
+    <ion-grid>
+      <!-- top row -->
+      <ion-row>
+        <ion-col>
+          <div class="text-side">
+            <h1 class="text-title">
+              Le Podcast du Code, Design et Productivité.
+            </h1>
+            <p class="text-desc">
+              The Techie c'est le recits des pro du code qui nous parle de les
+              debuts dans le monde de la programation et du design en afrique et
+              dans le monde.
+            </p>
+          </div>
+        </ion-col>
+        <ion-col class="col-img">
+          <div pull="right" class="illustration">
+            <img
+              src="../../assets/illustrations/podcast.svg"
+              alt="illustration of thetechies iistening to an episode"
+            />
+          </div>
+        </ion-col>
+      </ion-row>
+      <!-- middle row for submit your email for the newsletter -->
+      <ion-row>
+        <div class="newsletter">
+          <div>
+            <ion-label>Souscrit a notre Newsletter.</ion-label>
+          </div>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Laissez votre mail!"
+          />
+          <ion-button>Envoyer</ion-button>
         </div>
-    </header>
-    <main id="container">
-        <ion-grid>
-            <!-- top row -->
-            <ion-row >
-                <ion-col >
-                   <div class="text-side">
-                        <h1 class="text-title">
-                            Le Podcast du Code, Design et Productivité.
-                        </h1>
-                        <p class="text-desc">
-                            The Techie c'est le recits des pro du code qui nous parle de les debuts dans le monde de la programation et du design en afrique et dans le monde.
-                        </p>
-                   </div>
-                </ion-col>
-                <ion-col >
-                    <div pull="right" class="illustration">
-                        <img  src="../../assets/illustrations/podcast.svg" alt="illustration of thetechies iistening to an episode">
-                    </div>
-                </ion-col>
-            </ion-row>
-            <!-- middle row for submit your email for the newsletter -->
-            <ion-row>
-                <div class="newsletter">
-                   <div>
-                    <ion-label>Souscrit a notre Newsletter.</ion-label>
-                   </div>
-                    <input type="email" name="email" id="email" placeholder="Laissez votre mail!">
-                    <ion-button>Envoyer</ion-button>
-                </div>
-            </ion-row>
-            <!-- loading episode row -->
-            <ion-row>
-                <div class="little-title">
-                    <h4 class="text-small">Latest episode</h4>
-                </div>
-            </ion-row>
-            <ion-row>
-                <div class="card-items">
-                    <ion-card>
-                        <div class="card-head">
-                            <img src="../../assets/illustrations/cardimg.jpg" alt="img tag" width="150" height="150">
-                            <div class="content">
-                                <p class="count">Ep.00</p>
-                                <p class="title">Tittle of the Podcast</p>
-                                <p class="tools">Language/tool/app/technology</p>
-                                <p class="date">DD/MM/YY</p>
-                            </div>
-                        </div>
-                        <ion-card-content>
-                            Text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting,remaining essentially unchanged.
-                        </ion-card-content>
-                        <ion-button expand="full">Lire</ion-button>
-                      </ion-card>  
-                </div>
-            </ion-row>
-        </ion-grid>
-    </main>
+      </ion-row>
+      <!-- loading episode row -->
+      <ion-row>
+        <div class="little-title">
+          <h4 class="text-small">Latest episode</h4>
+        </div>
+      </ion-row>
+      <ion-row>
+        <div class="card-items">
+          <ion-card>
+            <div class="card-head">
+              <img
+                src="../../assets/illustrations/cardimg.jpg"
+                alt="img tag"
+                width="150"
+                height="150"
+              />
+              <div class="content">
+                <p class="count">Ep.00</p>
+                <p class="title">Tittle of the Podcast</p>
+                <p class="tools">Language/tool/app/technology</p>
+                <p class="date">DD/MM/YY</p>
+              </div>
+            </div>
+            <ion-card-content>
+              Text ever since the 1500s, when an unknown printer took a galley
+              of type and scrambled it to make a type specimen book.It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting,remaining essentially unchanged.
+            </ion-card-content>
+            <ion-button expand="full">Lire</ion-button>
+          </ion-card>
+        </div>
+      </ion-row>
+    </ion-grid>
+  </main>
 </ion-content>
