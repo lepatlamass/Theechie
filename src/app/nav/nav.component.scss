@@ -122,6 +122,16 @@ header {
     
 }
 @media (min-width:48em) {
+
+    .brand {
+        margin-left: 3rem;
+    }
+
+    .menu {
+        #space-right {
+            margin-right: 3rem;
+        }
+    }
     
     .container li {
         float: left;
