@@ -48,21 +48,47 @@
             text-align: center;
         }
         @include respond(phone) {
-            font-size: 2.2rem;
+            font-size: 2rem;
             text-align: center;
         }
     }
 
     .imgplusbtn {
-        display: block;
+        display: flex;
         margin-top: 2rem;
-
+        margin-bottom: 1rem;
+        @include respond(phone) {
+            display: inline-block;
+            text-align: center;
+        }
         img {
             width: 80px;
         }
 
         ion-button {
-            margin-top: 1.2rem;
+            margin-top: 1rem;
+            margin-left: 1.2rem;
+            font-family: Changa;
+            height: 50px;
+            width: 300px;
+            @include respond(phone) {
+                margin-left: 0px;
+            }
+        }
+        ion-button#whatsapp {
+            --background: #00c451;
+        }
+        ion-button#facebook {
+            --background: #235b9e;
+        }
+        ion-button#twitter{
+            --background: #00abe3;;
+        }
+        ion-button#instagram{
+            --background: #2d80a6;
+        }
+        ion-button#youtube{
+            --background: #ff312e;
         }
     }
 }
