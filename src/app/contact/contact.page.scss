@@ -57,6 +57,9 @@
         display: flex;
         margin-top: 2rem;
         margin-bottom: 1rem;
+        @include respond(big-desktop) {
+            margin-top: 0px;
+        }
         @include respond(phone) {
             display: inline-block;
             text-align: center;
@@ -71,6 +74,10 @@
             font-family: Changa;
             height: 50px;
             width: 300px;
+            a {
+                text-decoration: none;
+                color: #fff;
+            }
             @include respond(phone) {
                 margin-left: 0px;
             }
