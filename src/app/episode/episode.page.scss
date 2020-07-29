@@ -1,0 +1,173 @@
+*,
+*::after,
+*::before {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: inherit;
+}
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em) { @content};  //600px
+    }
+    @if $breakpoint == tab-port {
+        @media (max-width: 56.25em) { @content};  //900px
+    }
+    @if $breakpoint == tab-land {
+        @media (max-width: 75em) { @content};     //1200px
+    }
+    @if $breakpoint == big-desktop {
+        @media (min-width: 112.5em) { @content};     //1800px
+    }
+}
+#container {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    @include respond(big-desktop) {
+        margin-top: 10rem;
+    }
+    @include respond(tab-port) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    @include respond(phone) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+   section.audio {
+    margin-right: 1rem;
+       margin-top: 8rem;
+       h4.little-title {
+        font-family: Changa;
+        font-size: 2rem;
+        font-weight: 500;
+       }
+       #episode-number {
+           font-family: Changa;
+           font-size: 1rem;
+           font-weight: normal;
+           color: #95989a;
+           margin-top: 10px;
+           margin-bottom: 10px;
+       }
+   } 
+   section.description {
+        margin-right: 1rem;
+       .audio-desc {
+           h4.little-tittle {
+            font-family: Changa;
+            font-size: 2rem;
+            font-weight: 500;
+            margin-top: 1rem;
+           }
+           .desc {
+               font-family: Changa;
+               font-size: 1.2rem;
+               font-weight: 300;
+               font-stretch: normal;
+                font-style: normal;
+                line-height: 1.83;
+                letter-spacing: normal;
+                text-align: left;
+                color: #95989a;
+           }
+       }
+       .audio-links-sponsors {
+        h4.little-tittle {
+            font-family: Changa;
+            font-size: 2rem;
+            font-weight: 500;
+            margin-top: 1rem;
+        }
+        a.links-item {
+            display: block;
+            margin-top: 1rem;
+            font-family: Changa;
+            color: #95989a;
+            text-decoration: none;
+
+            &:hover {
+                color: #1ebff0;
+            }
+
+            span {
+                color: red;
+            }
+        }
+       }
+   }
+   section.episode-numbering {
+       margin-top: 8rem;
+       p.numbering {
+        font-family: Changa;
+        font-size: 1.2rem;
+        color: #95989a;
+        font-weight: 500;
+        margin-bottom: .4rem;
+       }
+       p.title-episode {
+           font-family: Changa;
+           font-size: 1.5rem;
+           font-weight: 500;
+           color: #1ebff0;
+           margin-bottom: .4rem;
+       }
+       p.episode-date {
+        font-family: Changa;
+        font-size: .8rem;
+        color: #95989a;
+        font-weight: 500;
+        margin-bottom: 1rem;
+       }
+
+       ion-button {
+           display: block;
+           font-family: Changa;
+           font-size: 1.2rem;
+       }
+   }
+   section.guest-host {
+       .guest {
+           h4.guest-title {
+            font-family: Changa;
+            font-size: 2rem;
+            font-weight: 500;
+            margin-top: 1rem;
+            margin-bottom: 1rem; 
+           }
+           .guest-img {
+               width: 175px;
+               height: 175px;
+              img {
+                  border: solid 10px #1ebff0;
+                  border-radius: 1rem;
+              }
+           }
+           p.name {
+               font-family: Changa;
+               font-size: 1.3rem;
+               font-weight: 500;
+               color: #575751;
+               margin-bottom: .5rem;
+           }
+           .social-media-link {
+               margin-bottom: .4rem;
+               a {
+                    margin-left: .4rem;
+               }
+           }
+           p.desc {
+            font-family: Changa;
+            font-size: 1.2rem;
+            font-weight: 300;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.83;
+            letter-spacing: normal;
+            text-align: left;
+            color: #95989a;
+        }
+       }
+   }
+}
