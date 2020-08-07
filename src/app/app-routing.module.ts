@@ -20,7 +20,7 @@ const routes: Routes = [
     loadChildren: () => import('./contact/contact.module').then( m => m.ContactPageModule)
   },
   {
-    path: 'episode',
+    path: 'episode/:id',
     loadChildren: () => import('./episode/episode.module').then( m => m.EpisodePageModule)
   },
 ];

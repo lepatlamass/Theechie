@@ -1,13 +1,15 @@
 <ion-content>
   <nav></nav>
-  <main id="container">
+  <div id="container" *ngIf="episode?.fields">
     <ion-grid>
       <ion-row>
         <ion-col>
-          <section class="audio">
-            <h4 class="little-title">Lire le podcast</h4>
+          <section class="audio" >
+            <h4 class="little-title">
+              <!-- {{ episode.fields.episodeTitle }} -->
+            </h4>
             <figure id="episode-audio">
-              <figcaption id="episode-number">Episode 00</figcaption>
+              <figcaption id="episode-number">Episode</figcaption>
               <audio
                   controls
                   src="../../assets/audio/Overtime.mp3">
@@ -17,12 +19,12 @@
             </figure>
           </section>
           <section class="description">
-            <div class="audio-desc">
+            <div class="audio-desc" >
               <h4 class="little-tittle">
                 Description
               </h4>
               <p class="desc">
-                text ever since the 1500s, when an unknown printer took a galley of type and scrambled  it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                {{ episode.fields.longDescription }}
               </p>
             </div>
             <div class="audio-links-sponsors">
@@ -103,7 +105,7 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-  </main>
+  </div>
   <footer>
     <app-footer></app-footer>
   </footer>

@@ -47,29 +47,26 @@
         </div>
       </ion-row>
       <ion-row>
-        <div class="card-items">
+        <div class="card-items" *ngFor="let episode of episodes">
           <ion-card>
             <div class="card-head">
               <img
-                src="../../assets/illustrations/cardimg.jpg"
+                src="{{ episode.fields.episodeImageCaption.fields.file.url }}"
                 alt="img tag"
                 width="150"
                 height="150"
               />
               <div class="content">
-                <p class="count">Ep.00</p>
-                <p class="title">Tittle of the Podcast</p>
-                <p class="tools">Language/tool/app/technology</p>
-                <p class="date">DD/MM/YY</p>
+                <p class="count">Ep. {{ episode.fields.episodeNumber }}</p>
+                <p class="title">{{ episode.fields.episodeTitle }}</p>
+                <p class="tools">{{ episode.fields.toolUse }}</p>
+                <p class="date">{{ episode.fields.episodeDate }}</p>
               </div>
             </div>
             <ion-card-content>
-              Text ever since the 1500s, when an unknown printer took a galley
-              of type and scrambled it to make a type specimen book.It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting,remaining essentially unchanged.
+              {{ episode.fields.shortDescription }}
             </ion-card-content>
-            <ion-button expand="full" routerLink="/episode">Lire</ion-button>
+            <ion-button expand="full" (click)="gotoEpisode(episode.sys.id)">Lire</ion-button>
           </ion-card>
         </div>
       </ion-row>
