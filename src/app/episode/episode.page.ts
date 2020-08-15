@@ -22,8 +22,6 @@ export class EpisodePage implements OnInit {
     const episodeId = this.route.snapshot.paramMap.get('id');
     this.contentfulService.getEpisode(episodeId).then((episode) => {
       this.episode = episode;
-      return console.log(this.episode);
     });
   }
-
 }

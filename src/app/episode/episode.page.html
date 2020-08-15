@@ -8,125 +8,91 @@
             <h4 class="little-title">
               {{ episode.fields.episodeTitle }}
             </h4>
-            <!-- <figure id="episode-audio">
-              <figcaption id="episode-number">Episode</figcaption>
-              <audio
-                controls
-                src="{{ episode.fields.podcastAudio.fields.file.url }}"
+            <figure id="episode-audio">
+              <figcaption id="episode-number">Episode 0{{ episode.fields.episodeNumber }}</figcaption>
+              <iframe
+                width="100%"
+                height="100"
+                scrolling="no"
+                frameborder="no"
+                allow="autoplay"
+                [src]=" episode.fields.soundcloudApi | safe"
+              ></iframe>
+              <div
+                style="
+                  font-size: 10px;
+                  color: #cccccc;
+                  line-break: anywhere;
+                  word-break: normal;
+                  overflow: hidden;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                  font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
+                    Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
+                  font-weight: 100;
+                "
               >
-                Your browser does not support the
-                <code>audio</code> element.
-              </audio>
-            </figure> -->
-
-            <iframe
-              width="100%"
-              height="300"
-              scrolling="no"
-              frameborder="no"
-              allow="autoplay"
-              [src]=" episode.fields.longDescription | safe"
-            ></iframe>
-            <div
-              style="
-                font-size: 10px;
-                color: #cccccc;
-                line-break: anywhere;
-                word-break: normal;
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-                font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
-                  Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
-                font-weight: 100;
-              "  
-            >
-              <a
-                href="https://soundcloud.com/konwo-lorentz"
-                title="Konwo lorentz"
-                target="_blank"
-                style="color: #cccccc; text-decoration: none;"
-                >Konwo lorentz</a
-              >
-              ·
-              <a
-                href="https://soundcloud.com/konwo-lorentz/overtime/s-WfAuvXktpdP"
-                title="Overtime"
-                target="_blank"
-                style="color: #cccccc; text-decoration: none;"
-                >Overtime</a
-              >
-            </div>
-
-            <div></div>
+              </div>
+            </figure>
           </section>
           <section class="description">
             <div class="audio-desc">
               <h4 class="little-tittle">
                 Description
               </h4>
-              <p class="desc"></p>
+              <p class="desc">
+                {{ episode.fields.longDescription }}
+              </p>
             </div>
             <div class="audio-links-sponsors">
               <h4 class="little-tittle">
                 Liens utiles
               </h4>
-              <a href="#" target="_blank" class="links-item"
-                >Laravel.com <span id="special-color">(sponsors)</span></a
+              <a href="{{ episode.fields.lienUtile1 }}" target="_blank" class="links-item"
+                >{{ episode.fields.plaintext1 }}</a
               >
-              <a href="#" target="_blank" class="links-item"
-                >Laravel.com <span id="special-color">(sponsors)</span></a
+              <a href="{{ episode.fields.lienUtile2 }}" target="_blank" class="links-item"
+                >{{ episode.fields.plainText2 }}</a
               >
-              <a href="#" target="_blank" class="links-item"
-                >Laravel.com <span id="special-color">(sponsors)</span></a
+              <a href="{{ episode.fields.lienUtile3 }}" target="_blank" class="links-item"
+                >{{ episode.fields.plainText3 }}</a
               >
-              <a href="#" target="_blank" class="links-item"
-                >Laravel.com <span id="special-color">(sponsors)</span></a
+              <a href="{{ episode.fields.lienUtile4 }}" target="_blank" class="links-item"
+                >{{ episode.fields.plainText4 }}</a
               >
             </div>
             <div class="audio-links-sponsors">
               <h4 class="little-tittle">
                 Les meilleurs choix
               </h4>
-              <a href="#" target="_blank" class="links-item"
-                ><span id="special-color">Sponsor shoutout:</span>Laravel
-                (Lorentz)</a
+              <a href="{{ episode.fields.meilleurChoix1 }}" target="_blank" class="links-item"
+                >{{ episode.fields.meilleurChoixText1 }}</a
               >
-              <a href="#" target="_blank" class="links-item"
-                ><span id="special-color">Sponsor shoutout:</span>Laravel
-                (Lorentz)</a
+              <a href="{{ episode.fields.meilleurChoix2 }}" target="_blank" class="links-item"
+                >{{ episode.fields.meilleurChoixText2 }}</a
               >
-              <a href="#" target="_blank" class="links-item"
-                ><span id="special-color">Sponsor shoutout:</span>Laravel
-                (Lorentz)</a
+              <a href="{{ episode.fields.meilleurChoix3 }}" target="_blank" class="links-item"
+                >{{ episode.fields.meilleurChoixText3 }}</a
               >
-              <a href="#" target="_blank" class="links-item"
-                ><span id="special-color">Sponsor shoutout:</span>Laravel
-                (Lorentz)</a
+              <a href="{{ episode.fields.meilleurChoix4 }}" target="_blank" class="links-item"
+                >{{ episode.fields.meilleurChoixText4 }}</a
               >
-              <a href="#" target="_blank" class="links-item"
-                ><span id="special-color">Sponsor shoutout:</span>Laravel
-                (Lorentz)</a
-              >
-              <a href="#" target="_blank" class="links-item"
-                ><span id="special-color">Sponsor shoutout:</span>Laravel
-                (Lorentz)</a
-              >
+              
             </div>
           </section>
         </ion-col>
         <ion-col>
           <section class="episode-numbering">
             <p class="numbering">
-              Ep. 00
+              Ep.0{{ episode.fields.episodeNumber }}
             </p>
             <p class="title-episode">
-              Episode Tittle
+              {{ episode.fields.episodeTitle }}
             </p>
             <p class="episode-date">
-              23 Mai 2020
+              {{ episode.fields.episodeDate }}
             </p>
-            <ion-button color="primary">Télécharger</ion-button>
+            <!-- <ion-button color="primary">Télécharger</ion-button> -->
           </section>
           <section class="guest-host">
             <div class="guest">
@@ -135,19 +101,19 @@
               </h4>
               <figure class="guest-img">
                 <img
-                  src="{{ episode.fields.hostPicture.fields.file.url }}"
+                  src="{{ episode.fields.guestPicture.fields.file.url }}"
                   alt="guest picture"
                 />
               </figure>
-              <p class="name">Konwo lorentz</p>
+              <p class="name">{{ episode.fields.guestName }}</p>
               <div class="social-media-link">
-                <a href="#" class="facebook-link"
+                <a href="{{ episode.fields.guestWhaLink }}" class="facebook-link"
                   ><img
                     src="../../assets/icon/001-whatsapp.svg"
                     alt="whatsapp contact"
                     width="45"
                 /></a>
-                <a href="#" class="facebook-link"
+                <a href="{{ episode.fields.guestFbkLink }}" class="facebook-link"
                   ><img
                     src="../../assets/icon/002-facebook.svg"
                     alt="facebook contact"
@@ -162,13 +128,13 @@
                     alt="youtube contact"
                     width="45"
                 /></a>
-                <a href="#" class="facebook-link"
+                <a href="{{ episode.fields.guestTwtLink }}" class="facebook-link"
                   ><img
                     src="../../assets/icon/004-twitter.svg"
                     alt="Twitter contact"
                     width="45"
                 /></a>
-                <a href="#" class="facebook-link"
+                <a href="{{ episode.fields.guestInstagram }}" class="facebook-link"
                   ><img
                     src="../../assets/icon/005-instagram.svg"
                     alt="instagram contact"
@@ -176,10 +142,7 @@
                 /></a>
               </div>
               <p class="desc">
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged.
+                {{ episode.fields.guestBriefDescription }}
               </p>
             </div>
             <div class="guest">
@@ -188,37 +151,37 @@
               </h4>
               <figure class="guest-img">
                 <img
-                  src="{{ episode.fields.guestPicture.fields.file.url }}"
+                  src="{{ episode.fields.hostPicture.fields.file.url }}"
                   alt="guest picture"
                 />
               </figure>
-              <p class="name">Konwo lorentz</p>
+              <p class="name">{{ episode.fields.hostName }}</p>
               <div class="social-media-link">
-                <a href="#" class="facebook-link"
+                <a href="{{ episode.fields.hostWhatsappLink }}" class="facebook-link"
                   ><img
                     src="../../assets/icon/001-whatsapp.svg"
                     alt="whatsapp contact"
                     width="45"
                 /></a>
-                <a href="#" class="facebook-link"
+                <a href="{{ episode.fields.hostFbkLink }}" class="facebook-link"
                   ><img
                     src="../../assets/icon/002-facebook.svg"
                     alt="facebook contact"
                     width="45"
                 /></a>
-                <a href="#" class="facebook-link"
+                <a href="{{ episode.fields.hostYtLink }}" class="facebook-link"
                   ><img
                     src="../../assets/icon/003-youtube.svg"
                     alt="youtube contact"
                     width="45"
                 /></a>
-                <a href="#" class="facebook-link"
+                <a href="{{ episode.fields.hostTwtLink }}" class="facebook-link"
                   ><img
                     src="../../assets/icon/004-twitter.svg"
                     alt="Twitter contact"
                     width="45"
                 /></a>
-                <a href="#" class="facebook-link"
+                <a href="{{ episode.fields.hostIgLink }}" class="facebook-link"
                   ><img
                     src="../../assets/icon/005-instagram.svg"
                     alt="instagram contact"
@@ -226,10 +189,7 @@
                 /></a>
               </div>
               <p class="desc">
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged.
+                {{ episode.fields.hostShortDescrption }}
               </p>
             </div>
           </section>
