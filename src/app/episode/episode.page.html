@@ -4,48 +4,114 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <section class="audio" >
+          <section class="audio">
             <h4 class="little-title">
-              <!-- {{ episode.fields.episodeTitle }} -->
+              {{ episode.fields.episodeTitle }}
             </h4>
-            <figure id="episode-audio">
+            <!-- <figure id="episode-audio">
               <figcaption id="episode-number">Episode</figcaption>
               <audio
-                  controls
-                  src="../../assets/audio/Overtime.mp3">
-                      Your browser does not support the
-                      <code>audio</code> element.
+                controls
+                src="{{ episode.fields.podcastAudio.fields.file.url }}"
+              >
+                Your browser does not support the
+                <code>audio</code> element.
               </audio>
-            </figure>
+            </figure> -->
+
+            <iframe
+              width="100%"
+              height="300"
+              scrolling="no"
+              frameborder="no"
+              allow="autoplay"
+              [src]=" episode.fields.longDescription | safe"
+            ></iframe>
+            <div
+              style="
+                font-size: 10px;
+                color: #cccccc;
+                line-break: anywhere;
+                word-break: normal;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
+                  Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
+                font-weight: 100;
+              "  
+            >
+              <a
+                href="https://soundcloud.com/konwo-lorentz"
+                title="Konwo lorentz"
+                target="_blank"
+                style="color: #cccccc; text-decoration: none;"
+                >Konwo lorentz</a
+              >
+              ·
+              <a
+                href="https://soundcloud.com/konwo-lorentz/overtime/s-WfAuvXktpdP"
+                title="Overtime"
+                target="_blank"
+                style="color: #cccccc; text-decoration: none;"
+                >Overtime</a
+              >
+            </div>
+
+            <div></div>
           </section>
           <section class="description">
-            <div class="audio-desc" >
+            <div class="audio-desc">
               <h4 class="little-tittle">
                 Description
               </h4>
-              <p class="desc">
-                {{ episode.fields.longDescription }}
-              </p>
+              <p class="desc"></p>
             </div>
             <div class="audio-links-sponsors">
               <h4 class="little-tittle">
                 Liens utiles
               </h4>
-              <a href="#" target="_blank" class="links-item">Laravel.com <span id="special-color">(sponsors)</span></a>
-              <a href="#" target="_blank" class="links-item">Laravel.com <span id="special-color">(sponsors)</span></a>
-              <a href="#" target="_blank" class="links-item">Laravel.com <span id="special-color">(sponsors)</span></a>
-              <a href="#" target="_blank" class="links-item">Laravel.com <span id="special-color">(sponsors)</span></a>
+              <a href="#" target="_blank" class="links-item"
+                >Laravel.com <span id="special-color">(sponsors)</span></a
+              >
+              <a href="#" target="_blank" class="links-item"
+                >Laravel.com <span id="special-color">(sponsors)</span></a
+              >
+              <a href="#" target="_blank" class="links-item"
+                >Laravel.com <span id="special-color">(sponsors)</span></a
+              >
+              <a href="#" target="_blank" class="links-item"
+                >Laravel.com <span id="special-color">(sponsors)</span></a
+              >
             </div>
             <div class="audio-links-sponsors">
               <h4 class="little-tittle">
                 Les meilleurs choix
               </h4>
-              <a href="#" target="_blank" class="links-item"><span id="special-color">Sponsor shoutout:</span>Laravel (Lorentz)</a>
-              <a href="#" target="_blank" class="links-item"><span id="special-color">Sponsor shoutout:</span>Laravel (Lorentz)</a>
-              <a href="#" target="_blank" class="links-item"><span id="special-color">Sponsor shoutout:</span>Laravel (Lorentz)</a>
-              <a href="#" target="_blank" class="links-item"><span id="special-color">Sponsor shoutout:</span>Laravel (Lorentz)</a>
-              <a href="#" target="_blank" class="links-item"><span id="special-color">Sponsor shoutout:</span>Laravel (Lorentz)</a>
-              <a href="#" target="_blank" class="links-item"><span id="special-color">Sponsor shoutout:</span>Laravel (Lorentz)</a>
+              <a href="#" target="_blank" class="links-item"
+                ><span id="special-color">Sponsor shoutout:</span>Laravel
+                (Lorentz)</a
+              >
+              <a href="#" target="_blank" class="links-item"
+                ><span id="special-color">Sponsor shoutout:</span>Laravel
+                (Lorentz)</a
+              >
+              <a href="#" target="_blank" class="links-item"
+                ><span id="special-color">Sponsor shoutout:</span>Laravel
+                (Lorentz)</a
+              >
+              <a href="#" target="_blank" class="links-item"
+                ><span id="special-color">Sponsor shoutout:</span>Laravel
+                (Lorentz)</a
+              >
+              <a href="#" target="_blank" class="links-item"
+                ><span id="special-color">Sponsor shoutout:</span>Laravel
+                (Lorentz)</a
+              >
+              <a href="#" target="_blank" class="links-item"
+                ><span id="special-color">Sponsor shoutout:</span>Laravel
+                (Lorentz)</a
+              >
             </div>
           </section>
         </ion-col>
@@ -68,18 +134,52 @@
                 Guest
               </h4>
               <figure class="guest-img">
-                <img src="../../assets/illustrations/picture.jpg" alt="guest picture">
+                <img
+                  src="{{ episode.fields.hostPicture.fields.file.url }}"
+                  alt="guest picture"
+                />
               </figure>
               <p class="name">Konwo lorentz</p>
               <div class="social-media-link">
-                <a href="#" class="facebook-link"><img src="../../assets/icon/001-whatsapp.svg" alt="whatsapp contact" width="45" ></a>
-                <a href="#" class="facebook-link"><img src="../../assets/icon/002-facebook.svg" alt="facebook contact" width="45" ></a>
-                <a href="#" class="facebook-link"><img src="../../assets/icon/003-youtube.svg" alt="youtube contact" width="45" ></a>
-                <a href="#" class="facebook-link"><img src="../../assets/icon/004-twitter.svg" alt="Twitter contact" width="45" ></a>
-                <a href="#" class="facebook-link"><img src="../../assets/icon/005-instagram.svg" alt="instagram contact" width="45" ></a>
+                <a href="#" class="facebook-link"
+                  ><img
+                    src="../../assets/icon/001-whatsapp.svg"
+                    alt="whatsapp contact"
+                    width="45"
+                /></a>
+                <a href="#" class="facebook-link"
+                  ><img
+                    src="../../assets/icon/002-facebook.svg"
+                    alt="facebook contact"
+                    width="45"
+                /></a>
+                <a
+                  href="{{ episode.fields.guestYtLink }}"
+                  target="_blank"
+                  class="facebook-link"
+                  ><img
+                    src="../../assets/icon/003-youtube.svg"
+                    alt="youtube contact"
+                    width="45"
+                /></a>
+                <a href="#" class="facebook-link"
+                  ><img
+                    src="../../assets/icon/004-twitter.svg"
+                    alt="Twitter contact"
+                    width="45"
+                /></a>
+                <a href="#" class="facebook-link"
+                  ><img
+                    src="../../assets/icon/005-instagram.svg"
+                    alt="instagram contact"
+                    width="45"
+                /></a>
               </div>
               <p class="desc">
-                text ever since the 1500s, when an unknown printer took a galley of type and scrambled  it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book.It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged.
               </p>
             </div>
             <div class="guest">
@@ -87,18 +187,49 @@
                 Your host
               </h4>
               <figure class="guest-img">
-                <img src="../../assets/illustrations/picture.jpg" alt="guest picture">
+                <img
+                  src="{{ episode.fields.guestPicture.fields.file.url }}"
+                  alt="guest picture"
+                />
               </figure>
               <p class="name">Konwo lorentz</p>
               <div class="social-media-link">
-                <a href="#" class="facebook-link"><img src="../../assets/icon/001-whatsapp.svg" alt="whatsapp contact" width="45" ></a>
-                <a href="#" class="facebook-link"><img src="../../assets/icon/002-facebook.svg" alt="facebook contact" width="45" ></a>
-                <a href="#" class="facebook-link"><img src="../../assets/icon/003-youtube.svg" alt="youtube contact" width="45" ></a>
-                <a href="#" class="facebook-link"><img src="../../assets/icon/004-twitter.svg" alt="Twitter contact" width="45" ></a>
-                <a href="#" class="facebook-link"><img src="../../assets/icon/005-instagram.svg" alt="instagram contact" width="45" ></a>
+                <a href="#" class="facebook-link"
+                  ><img
+                    src="../../assets/icon/001-whatsapp.svg"
+                    alt="whatsapp contact"
+                    width="45"
+                /></a>
+                <a href="#" class="facebook-link"
+                  ><img
+                    src="../../assets/icon/002-facebook.svg"
+                    alt="facebook contact"
+                    width="45"
+                /></a>
+                <a href="#" class="facebook-link"
+                  ><img
+                    src="../../assets/icon/003-youtube.svg"
+                    alt="youtube contact"
+                    width="45"
+                /></a>
+                <a href="#" class="facebook-link"
+                  ><img
+                    src="../../assets/icon/004-twitter.svg"
+                    alt="Twitter contact"
+                    width="45"
+                /></a>
+                <a href="#" class="facebook-link"
+                  ><img
+                    src="../../assets/icon/005-instagram.svg"
+                    alt="instagram contact"
+                    width="45"
+                /></a>
               </div>
               <p class="desc">
-                text ever since the 1500s, when an unknown printer took a galley of type and scrambled  it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book.It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged.
               </p>
             </div>
           </section>

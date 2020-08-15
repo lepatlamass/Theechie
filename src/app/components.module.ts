@@ -5,6 +5,7 @@ import { Routes, RouterModule, Router } from '@angular/router';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 
+
 @NgModule ({
     declarations: [ NavComponent,FooterComponent ],
     exports: [NavComponent,FooterComponent],

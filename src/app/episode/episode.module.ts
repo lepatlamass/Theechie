@@ -8,6 +8,7 @@ import { EpisodePageRoutingModule } from './episode-routing.module';
 
 import { EpisodePage } from './episode.page';
 import { ComponentsModule } from '../components.module';
+import { PipesModule } from '../pipes.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { ComponentsModule } from '../components.module';
     FormsModule,
     IonicModule,
     ComponentsModule,
-    EpisodePageRoutingModule
+    EpisodePageRoutingModule,
+    PipesModule
   ],
   declarations: [EpisodePage]
 })
