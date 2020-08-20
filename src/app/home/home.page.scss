@@ -78,6 +78,19 @@
                 margin-bottom: 1rem;
             }
         }
+
+        .podcast {
+            &-site {
+                margin-top: 1rem;
+            }
+            &-apps {
+                margin-top: .8rem;
+                
+                a {
+                    margin-right: 1rem;
+                }
+            }
+        }
     }
 
     .col-img {
@@ -199,22 +212,20 @@
         }
     }
     
-    .card-items {
-        width: 800px;
-        //height: 600px;
+    .card-items { 
+        width: auto;
         padding-bottom: 1.5em;
         margin: 0 auto;
         ion-card {
             padding: 2em;
             font-family: Changa;
-
             img {
                 margin-right: 1em;
             }
         }
         .card-head {
-            display: flex;
-            flex-direction: row;
+            //display: flex;
+         //   flex-direction: row;
 
             .content {
                 margin-top: -10px;

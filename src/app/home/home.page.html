@@ -1,5 +1,5 @@
 <ion-content>
- <nav></nav>
+  <nav></nav>
   <main id="container">
     <ion-grid>
       <!-- top row -->
@@ -14,7 +14,27 @@
               debuts dans le monde de la programation et du design en afrique et
               dans le monde.
             </p>
+            <h2 class="podcast-site">
+              Écoutez-nous aussi ici
+            </h2>
+            <div class="podcast-apps">
+              <a href="#" target="_blank" rel="noopener noreferrer"
+                ><img
+                  src="../../assets/icon/Google_Podcasts_Logo.png"
+                  width="60"
+                  height="60"
+                  alt="thetechie google podacst link"
+              /></a>
+              <a href="#" target="_blank" rel="noopener noreferrer"
+                ><img
+                  src="../../assets/icon/podcast.svg"
+                  width="60"
+                  height="60"
+                  alt="thetechie apple podacst link"
+              /></a>
+            </div>
           </div>
+         
         </ion-col>
         <ion-col class="col-img">
           <div pull="right" class="illustration">
@@ -50,12 +70,6 @@
         <div class="card-items" *ngFor="let episode of episodes">
           <ion-card>
             <div class="card-head">
-              <img
-                src="{{ episode.fields.episodeImageCaption.fields.file.url }}"
-                alt="img tag"
-                width="150"
-                height="150"
-              />
               <div class="content">
                 <p class="count">Ep. {{ episode.fields.episodeNumber }}</p>
                 <p class="title">{{ episode.fields.episodeTitle }}</p>
@@ -66,7 +80,9 @@
             <ion-card-content>
               {{ episode.fields.shortDescription }}
             </ion-card-content>
-            <ion-button expand="full" (click)="gotoEpisode(episode.sys.id)">Lire</ion-button>
+            <ion-button expand="full" (click)="gotoEpisode(episode.sys.id)"
+              >Lire</ion-button
+            >
           </ion-card>
         </div>
       </ion-row>
@@ -76,4 +92,3 @@
     <app-footer></app-footer>
   </footer>
 </ion-content>
-

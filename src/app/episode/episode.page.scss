@@ -23,9 +23,6 @@
 #container {
     padding-left: 4rem;
     padding-right: 4rem;
-    @include respond(big-desktop) {
-        margin-top: 10rem;
-    }
     @include respond(tab-port) {
         padding-left: 1rem;
         padding-right: 1rem;
@@ -70,7 +67,7 @@
                 line-height: 1.83;
                 letter-spacing: normal;
                 text-align: left;
-                color: #95989a;
+                color: #262627;
            }
        }
        .audio-links-sponsors {
@@ -84,7 +81,7 @@
             display: block;
             margin-top: 1rem;
             font-family: Changa;
-            color: #95989a;
+            color: #262627;
             text-decoration: none;
 
             &:hover {
@@ -168,7 +165,7 @@
             line-height: 1.83;
             letter-spacing: normal;
             text-align: left;
-            color: #95989a;
+            color: #262627;
         }
        }
    }
