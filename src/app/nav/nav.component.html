@@ -12,8 +12,8 @@
   <input type="checkbox" class="menu-btn"  id="menu-btn">
   <label for="menu-btn" class="menu-icon"><span class="nav-icon"></span></label>
     <ul class="menu">
-      <li class="items"><a class="items-link" routerLink="/home">Home</a></li>
-      <li class="items"><a class="items-link" routerLink="/about">About</a></li>
-      <li id="space-right" class="items"><a class="items-link" routerLink="/contact">Contact</a></li>
+      <li class="items"><a (click)="setTitle('Home')" class="items-link" routerLink="/home">Home</a></li>
+      <li class="items"><a (click)="setTitle('About')" class="items-link" routerLink="/about">About</a></li>
+      <li id="space-right" class="items"><a (click)="setTitle('Contact')" class="items-link" routerLink="/contact">Contact</a></li>
     </ul>
 </header>
